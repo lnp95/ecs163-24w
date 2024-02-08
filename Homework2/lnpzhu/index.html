@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Diagrams Full Screen Layout</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .r1-chart {
+            flex: 1 1 auto;
+            /* Allows each div to grow and shrink as needed */
+            max-width: 50%;
+            /* Maximum width for large screens */
+            min-width: 300px;
+            /* Minimum width before wrapping */
+            max-height: 50%;
+            height: 40vh;
+            /* Adjust height to be full viewport height or a fraction of it */
+            /*put the chart at the center of the div vertically*/
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .r2-chart {
+            flex: 1 1 auto;
+            /* Allows each div to grow and shrink as needed */
+            max-width: 100%;
+            /* Maximum width for large screens */
+            max-height: 50%;
+            min-width: 300px;
+            /* minimum width before wrapping */
+            height: 60vh;
+            /* Adjust height to be full viewport height or a fraction of it */
+            display: block;
+        }
+
+        svg {
+            width: 100%;
+            /* Use full container width */
+            height: 100%;
+            /* Use full container height */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <div class="r1-chart"><svg id="pie-chart-svg"></svg></div>
+        <div class="r1-chart"><svg id="parallel-coordinates-svg"></svg></div>
+    </div>
+    <div class="chart-container">
+        <div class="r2-chart"><svg id="bar-chart-svg"></svg></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
